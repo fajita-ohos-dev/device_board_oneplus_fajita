@@ -13,7 +13,7 @@ export OUT_PKG_DIR=$7
 export KERNEL_SRC_TMP_PATH=${PROJECT_ROOT}/out/KERNEL_OBJ/kernel/src_tmp/${KERNEL_VERSION}
 export KERNEL_IMAGE_FILE=${KERNEL_SRC_TMP_PATH}/arch/${KERNEL_ARCH}/boot/${KERNEL_IMAGE}
 
-LINUX_KERNEL_MAKEFILE=${PROJECT_ROOT}/device/board/raspberrypi/rpi4/kernel/make_kernel.mk
+LINUX_KERNEL_MAKEFILE=${PROJECT_ROOT}/device/board/oneplus/fajita/kernel/make_kernel.mk
 
 # rm -f ${KERNEL_IMAGE_FILE}
 

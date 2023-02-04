@@ -10,7 +10,7 @@ import pathlib
 os.environ['ARCH'] = 'arm'
 os.environ['CROSS_COMPILE'] = 'arm-linux-gnueabihf-'
 
-defconfig = 'bcm2711_oh_defconfig'
+defconfig = 'sdm845_oh_defconfig'
 kernel_dir = os.path.abspath('../../out/KERNEL_OBJ/kernel/src_tmp/linux-5.10')
 script_dir = os.path.abspath(os.path.dirname(__file__))
 bootimgsize = 128*1024*1024
@@ -49,8 +49,8 @@ def install_kernel_modules():
     modules_dir = os.path.join(output_dir, 'kernel_modules')
     remove_directory(modules_dir)
     kolist = [
-        'drivers/net/wireless/broadcom/brcm80211/brcmfmac/brcmfmac.ko',
-        'drivers/net/wireless/broadcom/brcm80211/brcmutil/brcmutil.ko',
+        'drivers/net/wireless/qualcomm/brcm80211/brcmfmac/brcmfmac.ko',
+        'drivers/net/wireless/qualcomm/brcm80211/brcmutil/brcmutil.ko',
     ]
     os.mkdir(modules_dir)
     for ko in kolist:
@@ -62,18 +62,18 @@ def make_boot_img():
 
     imagefile = 'images/boot.img'
     imagefile_tmp = imagefile + '.tmp'
-    boot_dir = 'rpi4boot'
-    overlays_dir = 'rpi4boot/overlays'
+    boot_dir = 'fajitaboot'
+    overlays_dir = 'fajitaboot/overlays'
     remove_directory(boot_dir)
     remove_file(imagefile)
-    shutil.copytree(os.path.join(script_dir, 'rpi4boot'), boot_dir)
+    shutil.copytree(os.path.join(script_dir, 'fajitaboot'), boot_dir)
     # os.mkdir(overlays_dir)
     shutil.copy(
         os.path.join(kernel_dir, 'arch/arm/boot/zImage'),
         boot_dir
     )
     # shutil.copy(
-    #     os.path.join(kernel_dir, 'arch/arm/boot/dts/bcm2711-rpi-4-b.dtb'),
+    #     os.path.join(kernel_dir, 'arch/arm/boot/dts/sdm845-rpi-4-b.dtb'),
     #     boot_dir
     # )
     # shutil.copy(

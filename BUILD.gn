@@ -13,14 +13,14 @@
 
 import("//build/ohos.gni")
 
-print("rpi4_group in")
-group("rpi4_group") {
+print("fajita_group in")
+group("fajita_group") {
   deps = [
     "cfg:init_configs",
     "distributedhardware:distributedhardware",
-    "kernel:rpi4_kernel",
-    "//device/soc/broadcom/bcm2711/standard/hardware:hardware_group",
+    "kernel:fajita_kernel",
+    "//device/soc/qualcomm/sdm845/standard/hardware:hardware_group",
     "test:test",
-    "//vendor/raspberrypi/rpi4/sample:sample_group"
+    "//vendor/oneplus/fajita/sample:sample_group"
   ]
 }

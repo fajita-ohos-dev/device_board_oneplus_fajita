@@ -2,7 +2,7 @@
 set -e
 
 export PROJECT_ROOT=/home/diemit/OpenHarmony
-export PRODUCT_PATH=vendor/rpifdn/rpi4
+export PRODUCT_PATH=vendor/rpifdn/fajita
 export ARCH=arm64
 export KERNEL_VERSION=linux-rpi-5.10
 export CC=${PROJECT_ROOT}/prebuilts/clang/ohos/linux-x86_64/llvm/bin/clang

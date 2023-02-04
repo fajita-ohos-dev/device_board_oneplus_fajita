@@ -6,9 +6,9 @@ KERNEL_VERSION=$2
 OUT_DIR=${PROJECT_ROOT}/out/KERNEL_OBJ
 KERNEL_SRC_PATH=${PROJECT_ROOT}/kernel/linux/${KERNEL_VERSION}
 KERNEL_SRC_TMP_PATH=${OUT_DIR}/kernel/src_tmp/${KERNEL_VERSION}
-PATCHES_PATH=${PROJECT_ROOT}/device/board/raspberrypi/rpi4/patches
+PATCHES_PATH=${PROJECT_ROOT}/device/board/oneplus/fajita/patches
 HDF_PATCH_FILE=${PATCHES_PATH}/hdf.patch
-KERNEL_PATCH=${PATCHES_PATH}/rpi4.patch
+KERNEL_PATCH=${PATCHES_PATH}/fajita.patch
 
 if [ ! -d "${KERNEL_SRC_TMP_PATH}" ];then
     mkdir -p ${KERNEL_SRC_TMP_PATH}

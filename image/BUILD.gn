@@ -15,7 +15,7 @@ import("//build/config/clang/clang.gni")
 import("//build/ohos.gni")
 
 output_dir = "$root_build_dir/packages/phone"
-action("rpi4_bootimg") {
+action("fajita_bootimg") {
     script = "build_bootimg.py"
     outputs = [ "$output_dir/images/boot.img" ]
     args = [ "bootimg", rebase_path(output_dir) ]
@@ -23,7 +23,7 @@ action("rpi4_bootimg") {
 
 
 action("firmware") {
-  deps = [ ":rpi4_bootimg" ]
+  deps = [ ":fajita_bootimg" ]
   script = "make_rpi_sdcard_image.py"
   outputs = [ "$root_build_dir/packages/phone/images/firmware.img" ]
   args = [

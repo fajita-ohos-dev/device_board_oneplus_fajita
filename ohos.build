@@ -1,12 +1,12 @@
 {
-    "subsystem": "raspberrypi_products",
+    "subsystem": "oneplus_products",
     "parts": {
-        "raspberrypi_products": {
+        "oneplus_products": {
             "module_list": [
-                "//device/board/raspberrypi/${device_name}:rpi4_group"
+                "//device/board/oneplus/${device_name}:fajita_group"
             ],
             "test_list": [
-                "//device/board/raspberrypi/rpi4/image:firmware"
+                "//device/board/oneplus/fajita/image:firmware"
             ]
         }
     }

@@ -23,18 +23,18 @@ kernel_image = ""
 defconfig_file = ""
 if (target_cpu == "arm") {
   kernel_image = "zImage"
-  defconfig_file = "bcm2711_oh_32_defconfig"
+  defconfig_file = "sdm845_oh_32_defconfig"
 } else if (target_cpu == "arm64") {
     kernel_image = "Image"
-    defconfig_file = "bcm2711_oh_defconfig"
+    defconfig_file = "sdm845_oh_defconfig"
 }
 
-group("rpi4_kernel") {
+group("fajita_kernel") {
 
     deps = [
       ":check_patch",
       ":check_build",
-      ":rpi4_build_kernel",
+      ":fajita_build_kernel",
     ]
 }
 
@@ -59,7 +59,7 @@ action("check_build") {
   ]
 }
 
-action("rpi4_build_kernel") {
+action("fajita_build_kernel") {
     script = "make_kernel.sh"
     sources = [ kernel_source_dir ]
 

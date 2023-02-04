@@ -94,7 +94,7 @@ patchlist = [
 
 #git fetch https://gitee.com/openharmony/kernel_linux_5.10.git pull/138/head:pr_138
 #https://gitee.com/openharmony/kernel_linux_5.10/pulls/138.diff
-basepath = '/home/diemit/OpenHarmony/device/board/raspberrypi/rpi4/patches/kernel-5.10'
+basepath = '/home/diemit/OpenHarmony/device/board/oneplus/fajita/patches/kernel-5.10'
 baseurl = 'https://gitee.com/openharmony/kernel_linux_5.10/pulls'
 os.popen(f'mkdir -p {basepath}')
 os.chdir(basepath)
@@ -107,7 +107,7 @@ for patchid in patchlist:
             print(temp)
 
 
-#git apply /home/diemit/OpenHarmony/device/board/raspberrypi/rpi4/patches/kernel-5.10/1.diff
+#git apply /home/diemit/OpenHarmony/device/board/oneplus/fajita/patches/kernel-5.10/1.diff
 #git apply --stat patchfile
 #git apply --check patchfile
 os.chdir('/home/diemit/OpenHarmony/kernel/linux/linux-rpi-5.10')

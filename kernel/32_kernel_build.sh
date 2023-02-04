@@ -4,12 +4,12 @@
 set -e
 
 PROJECT_ROOT=/home/diemit/OpenHarmony
-PRODUCT_PATH=vendor/raspberrypi/rpi4
+PRODUCT_PATH=vendor/oneplus/fajita
 KERNEL_ARCH=arm
 KERNEL_VERSION=linux-5.10
 KERNEL_IMAGE=zImage
-DEFCONFIG_FILE=bcm2711_oh_32_defconfig
-OUT_PKG_DIR=${PROJECT_ROOT}/out/rpi4/packages/phone/images
+DEFCONFIG_FILE=sdm845_oh_32_defconfig
+OUT_PKG_DIR=${PROJECT_ROOT}/out/fajita/packages/phone/images
 
 OUT_DIR=${PROJECT_ROOT}/out/KERNEL_OBJ
 KERNEL_SRC_TMP_PATH=${OUT_DIR}/kernel/src_tmp/${KERNEL_VERSION}

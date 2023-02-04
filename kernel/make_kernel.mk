@@ -1,8 +1,8 @@
 
 # ohos makefile to build kernel
 
-KERNEL_CONFIG_PATH = $(PROJECT_ROOT)/device/board/raspberrypi/rpi4/kernel/configs
-export INSTALL_MOD_PATH := $(PROJECT_ROOT)/device/board/raspberrypi/rpi4/modules
+KERNEL_CONFIG_PATH = $(PROJECT_ROOT)/device/board/oneplus/fajita/kernel/configs
+export INSTALL_MOD_PATH := $(PROJECT_ROOT)/device/board/oneplus/fajita/modules
 PREBUILTS_GCC_DIR := $(PROJECT_ROOT)/prebuilts/gcc
 PREBUILTS_CLANG_DIR := $(PROJECT_ROOT)/prebuilts/clang
 CLANG_HOST_TOOLCHAIN := $(PROJECT_ROOT)/prebuilts/clang/ohos/linux-x86_64/llvm/bin
@@ -14,11 +14,11 @@ KERNEL_PREBUILT_MAKE := make
 ifeq ($(KERNEL_ARCH), arm)
     KERNEL_TARGET_TOOLCHAIN := $(PREBUILTS_GCC_DIR)/linux-x86/arm/gcc-linaro-7.5.0-arm-linux-gnueabi/bin
     KERNEL_TARGET_TOOLCHAIN_PREFIX := $(KERNEL_TARGET_TOOLCHAIN)/arm-linux-gnueabi-
-    DTBS := bcm2711-rpi-4-b.dtb overlays/vc4-fkms-v3d.dtbo overlays/rpi-ft5406.dtbo overlays/rpi-backlight.dtbo overlays/dwc2.dtbo
+    DTBS := sdm845-rpi-4-b.dtb overlays/vc4-fkms-v3d.dtbo overlays/rpi-ft5406.dtbo overlays/rpi-backlight.dtbo overlays/dwc2.dtbo
 else ifeq ($(KERNEL_ARCH), arm64)
     KERNEL_TARGET_TOOLCHAIN := $(PREBUILTS_GCC_DIR)/linux-x86/aarch64/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu/bin
     KERNEL_TARGET_TOOLCHAIN_PREFIX := $(KERNEL_TARGET_TOOLCHAIN)/aarch64-linux-gnu-
-    DTBS := broadcom/bcm2711-rpi-4-b.dtb overlays/vc4-fkms-v3d.dtbo overlays/rpi-ft5406.dtbo overlays/rpi-backlight.dtbo overlays/dwc2.dtbo
+    DTBS := qualcomm/sdm845-rpi-4-b.dtb overlays/vc4-fkms-v3d.dtbo overlays/rpi-ft5406.dtbo overlays/rpi-backlight.dtbo overlays/dwc2.dtbo
 endif
 
 KERNEL_PERL := /usr/bin/perl

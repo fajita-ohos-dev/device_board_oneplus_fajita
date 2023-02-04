@@ -1,0 +1,13 @@
+{
+    "subsystem": "raspberrypi_products",
+    "parts": {
+        "raspberrypi_products": {
+            "module_list": [
+                "//device/board/raspberrypi/${device_name}:rpi4_group"
+            ],
+            "test_list": [
+                "//device/board/raspberrypi/rpi4/image:firmware"
+            ]
+        }
+    }
+}

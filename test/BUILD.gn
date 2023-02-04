@@ -1,0 +1,158 @@
+
+import("//build/ohos.gni")
+
+ohos_executable("modetest") {
+
+  #../../third_party/libdrm/tests/util/pattern.c:988:8: error: unused variable 'mem_base' [-Werror,-Wunused-variable]
+  #需要手动注释掉void *mem_base = mem;
+
+  sources = [
+    "//third_party/libdrm/tests/modetest/buffers.c",
+    "//third_party/libdrm/tests/modetest/cursor.c",
+    "//third_party/libdrm/tests/modetest/modetest.c",
+    "//third_party/libdrm/tests/util/format.c",
+    "//third_party/libdrm/tests/util/kms.c",
+    "//third_party/libdrm/tests/util/pattern.c",
+  ]
+
+  cflags = [
+      "-Wno-pointer-arith",
+  ]
+
+  include_dirs = [
+    "//third_party/libdrm/tests",
+    "//third_party/libdrm/tests/util",
+    "//third_party/libdrm/tests/modetest",
+  ]
+
+  deps = [
+    "//third_party/libdrm:libdrm",
+  ]
+
+  part_name = "raspberrypi_products"
+  install_images = [ "system" ]
+  install_enable = true
+}
+
+ohos_executable("modeset_single_buffer") {
+
+  sources = [
+    "modeset_single_buffer/modeset_single_buffer.c",
+  ]
+
+  deps = [
+    "//third_party/libdrm:libdrm",
+  ]
+
+  part_name = "raspberrypi_products"
+  install_images = [ "system" ]
+  install_enable = true
+}
+
+ohos_executable("modeset_double_buffer") {
+
+  sources = [
+    "modeset_double_buffer/modeset_double_buffer.c",
+  ]
+
+  deps = [
+    "//third_party/libdrm:libdrm",
+  ]
+
+  part_name = "raspberrypi_products"
+  install_images = [ "system" ]
+  install_enable = true
+}
+
+ohos_executable("modeset_page_flip") {
+
+  sources = [
+    "modeset_page_flip/modeset_page_flip.c",
+  ]
+
+  deps = [
+    "//third_party/libdrm:libdrm",
+  ]
+
+  part_name = "raspberrypi_products"
+  install_images = [ "system" ]
+  install_enable = true
+}
+
+ohos_executable("modeset_plane_test") {
+
+  sources = [
+    "modeset_plane_test/modeset_plane_test.c",
+  ]
+
+  deps = [
+    "//third_party/libdrm:libdrm",
+  ]
+
+  part_name = "raspberrypi_products"
+  install_images = [ "system" ]
+  install_enable = true
+}
+
+ohos_executable("modeset_atomic_plane") {
+
+  sources = [
+    "modeset_atomic_plane/modeset_atomic_plane.c",
+  ]
+
+  deps = [
+    "//third_party/libdrm:libdrm",
+  ]
+
+  part_name = "raspberrypi_products"
+  install_images = [ "system" ]
+  install_enable = true
+}
+
+ohos_executable("modeset_atomic_crtc") {
+
+  sources = [
+    "modeset_atomic_crtc/modeset_atomic_crtc.c",
+  ]
+
+  deps = [
+    "//third_party/libdrm:libdrm",
+  ]
+
+  part_name = "raspberrypi_products"
+  install_images = [ "system" ]
+  install_enable = true
+}
+
+ohos_prebuilt_executable("gl_test") {
+  source = "native_window_ohos/native_main"
+  part_name = "raspberrypi_products"
+  install_images = [ "system" ]
+  install_enable = true
+}
+
+ohos_executable("framebuffer_test") {
+
+  sources = [
+    "framebuffer_test/framebuffer_test.c",
+  ]
+
+  part_name = "raspberrypi_products"
+  install_images = [ "system" ]
+  install_enable = true
+}
+
+group("test") {
+  deps = [
+    ":modetest",
+    ":modeset_single_buffer",
+    ":modeset_double_buffer",
+    ":modeset_page_flip",
+    ":modeset_plane_test",
+    ":modeset_atomic_plane",
+    ":modeset_atomic_crtc",
+    ":gl_test",
+    ":framebuffer_test",
+  ]
+
+}
